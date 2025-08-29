@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo Edu</title>
+    <!-- Use Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN for styling -->
+     <link href="https://fonts.cdnfonts.com/css/e-embuhlah" rel="stylesheet">
+                
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'e Embuhlah', sans-serif;
+                                     
+            background-color: #000000;
+            color: #e0e7ff;
+            /* Creates a galaxy-like radial gradient background */
+            background-image: radial-gradient(at 70% 30%, #000000, transparent),
+                              radial-gradient(at 20% 80%, #30152f, #000000);
+            overflow: hidden; /* Hide scrollbars for the star effect */
+        }
+
+        /* --- Star Field Effect --- */
+        /* Use a pseudo-element to create a layer of stars with box-shadows */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* Create different sizes and layers of stars for depth */
+        .stars-1 {
+            background: transparent;
+            animation: move-stars 200s linear infinite;
+        }
+
+        .stars-2 {
+            background: transparent;
+            animation: move-stars 150s linear infinite;
+        }
+
+        .stars-3 {
+            background: transparent;
+            animation: move-stars 100s linear infinite;
+        }
+
+        @keyframes move-stars {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(-2000px, 2000px);
+            }
+        }
+    </style>
+</head>
+<body class="relative min-h-screen">
+
+    <!-- Star Field Container -->
+    <div class="stars stars-1"></div>
+    <div class="stars stars-2"></div>
+    <div class="stars stars-3"></div>
+
+    <!-- Main Page Content -->
+    <div class="relative z-10 flex flex-col min-h-screen">
+        <!-- Navigation Panel -->
+        <nav class="w-full flex justify-between items-center py-4 px-6 md:px-12 bg-white bg-opacity-5 backdrop-blur-md shadow-lg rounded-full mx-auto mt-4 max-w-7xl border border-white border-opacity-30">
+            <!-- Logo and Site Name -->
+            <div class="flex items-center space-x-3">
+                <!-- SVG Icon for the logo -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 text-sky-400">
+                    <path fill-rule="evenodd" d="M11.996 2.5a.75.75 0 01.75.75v3.137c.884.148 1.745.394 2.576.732L16.2 5.151a.75.75 0 011.06 1.06l-1.35 1.35a7.51 7.51 0 00.732 2.576l3.137.75a.75.75 0 010 1.5l-3.137.75a7.502 7.502 0 00-.732 2.576l1.35 1.35a.75.75 0 11-1.06 1.06l-1.35-1.35c-.831.338-1.692.584-2.576.732v3.137a.75.75 0 01-1.5 0v-3.137a7.502 7.502 0 00-2.576-.732l-1.35 1.35a.75.75 0 11-1.06-1.06l1.35-1.35a7.51 7.51 0 00-.732-2.576l-3.137-.75a.75.75 0 010-1.5l3.137-.75a7.502 7.502 0 00.732-2.576l-1.35-1.35a.75.75 0 011.06-1.06l1.35 1.35c.884-.148 1.745-.394 2.576-.732V3.25a.75.75 0 01.75-.75zM12 18a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-xl md:text-2xl font-bold text-sky-300 tracking-wider">Stellar Journeys</span>
+            </div>
+            
+            <!-- Navigation Links -->
+            <ul class="flex items-center space-x-6 md:space-x-10 text-sm md:text-base font-medium">
+                <li>
+                    <a href="#" class="text-white hover:text-sky-300 transition-colors duration-200">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="text-white hover:text-sky-300 transition-colors duration-200">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="flex-grow flex flex-col justify-center items-center text-center p-6">
+            <h1 class="text-4xl md:text-7xl font-extrabold leading-tight text-white mb-4">Bored of our solar system?</h1>
+            <p class="text-base md:text-xl max-w-3xl text-gray-300 mb-8">
+                Uncover the mysteries of distant planets and your new possible homes. Your adventure awaits beyond the stars.
+            </p>
+            <a href="nasa.html" class="bg-white text-indigo-900 font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                Hop on our Rocket!
+            </a>
+        </header>
+
+    </div>
+
+    <script>
+        // JavaScript to dynamically create the star field and handle responsiveness
+        const createStars = () => {
+            const stars = {
+                1: {
+                    count: 700,
+                    size: '1px',
+                    color: '#fff',
+                },
+                2: {
+                    count: 200,
+                    size: '2px',
+                    color: '#e0e7ff',
+                },
+                3: {
+                    count: 50,
+                    size: '3px',
+                    color: '#c7d2fe',
+                },
+            };
+
+            for (const layer in stars) {
+                const { count, size, color } = stars[layer];
+                const element = document.querySelector(`.stars-${layer}`);
+                let boxShadow = '';
+
+                for (let i = 0; i < count; i++) {
+                    const x = Math.random() * 2000;
+                    const y = Math.random() * 2000;
+                    boxShadow += `${x}px ${y}px ${color},`;
+                }
+                
+                // Remove the trailing comma and apply the box-shadow
+                element.style.boxShadow = boxShadow.slice(0, -1);
+                element.style.width = size;
+                element.style.height = size;
+            }
+        };
+
+        // Call the function when the window loads
+        window.onload = createStars;
+    </script>
+</body>
+</html>
