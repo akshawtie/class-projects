@@ -59,7 +59,7 @@ hr{
   padding:1rem;
   font-size:1.2em;
   border-radius:10px;
-  background-color:#3b393b1a;
+  background-color:#c2bec209;
   height:2rem;
 }
 .textblock {
@@ -128,7 +128,7 @@ hr{
     vertical-align: middle;
 }
 body{
-  background-color: #020125;
+  background-color: #021921d4;
   overflow: hidden;
   height: 100vh;
 }
@@ -154,7 +154,8 @@ body{
   margin-left:0.5%;
   width:77%;
   padding:0.1rem;
-  border:0.5rem;
+  padding-right: 1.5em;
+   border:0.5rem;
   border-radius:3%;
   background-color: rgba(255, 255, 255, 0.04);
   height: calc(100vh - 60px);
