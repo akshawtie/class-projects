@@ -221,4 +221,18 @@
     <br><br><br><br>
     </div></div>
     <hr>
+
+     <script>
+     
+  (function() {
+    const hour = new Date().getHours();
+    const body = document.body;
+
+    if (hour >= 6 && hour < 18) {
+      body.style.backgroundColor = "#021921d4"; 
+    } else {
+      body.style.backgroundColor = "#080517"; 
+    }
+  })();
+</script>
 </body>
