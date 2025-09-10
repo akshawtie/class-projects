@@ -1,0 +1,83 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 25px;
+  color: #c922d5;
+  
+
+    background-color: rgba(0, 0, 0, 0);
+    padding:0px 0px;}
+
+    .nav-left a{
+  font-size: 2.4em;
+  text-decoration: none;
+  color:#f1cdf4;
+  font-family: 'e Embuhlah', sans-serif;
+                                                
+}
+.nav-right a {
+    font-size: 1.5em;
+    text-decoration: none;
+    font-family: 'e Embuhlah', sans-serif;
+                                                
+  color: #f1cdf4;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.melody_img {
+    height: 1.3rem;
+    width: auto;
+    margin-right: 5px;
+    vertical-align: middle;}
+    .melody2_img {
+    height: 2.2em;
+    padding-left:none;
+    width: auto;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+ body {
+            font-family: 'e Embuhlah', sans-serif;
+                                     
+            background-color: #000000;
+            color: #e0e7ff;
+            overflow:hidden;
+        }
+        
+        .mainpageview{
+
+            display:flex;
+            margin:1em;
+            gap:0.8em;
+        }
+        .mainleft{
+            width:25%;
+            padding:1em;
+            background-color: #4a454537;
+            font-family: 'e Embuhlah', sans-serif;
+        }
+        .mainright{
+            width:70%;
+             padding:1em;
+            background-color: #4a454537;
+            font-family: 'e Embuhlah', sans-serif;
+            
+        }
+        .bannerright{
+            width:100%;
+
+        }
+        .banner{
+            width:100%;
+        }
+        .banner-iframe {
+    width: 100%;
+    height: 20em;
+margin:0.5em;
+border-radius:0.5em;
+}
+.leftheadtext{
+    font-size:2em;
+    color:rgb(134, 60, 60);
+}

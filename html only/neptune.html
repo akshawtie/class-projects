@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Neptunians Animated Banner</title>
+     <link href="https://fonts.cdnfonts.com/css/pixelify-sans" rel="stylesheet">
+     <link href="https://fonts.cdnfonts.com/css/e-embuhlah" rel="stylesheet">
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a clean, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'e Embuhlah';
+        }
+
+        /* Initial state of the animated elements before the page loads */
+        /* The planet is positioned off-screen to the left */
+        .planet-image {
+            transform: translateX(-300px) translateY(-50%); /* Start far left, outside the viewport */
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .text-content > * {
+            opacity: 0;
+            transform: translateX(300px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .loaded .planet-image {
+            transform: translateX(0) translateY(-50%); /* Move fully into view */
+        }
+        
+        /* The text elements fade in and slide up, with a staggered delay */
+        .loaded .text-content h1 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .loaded .text-content p {
+            opacity: 1;
+            transform:translateX(150px);
+        }
+
+        .loaded .text-content .cta-button {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.9s;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <!-- Banner Container -->
+    <!-- overflow-hidden is crucial to hide the planet as it slides in -->
+    <header class="relative w-full max-w-6xl h-80 bg-[#0A2540] rounded-2xl shadow-2xl overflow-hidden">
+        
+        <!-- Planet Image -->
+        <!-- Replace the src with the path to your planet image -->
+        <img 
+            src="wasp-107-b_.png" 
+            alt="A stylized planet"
+            class="planet-image absolute left-0 top-1/2 h-[100%] max-w-none"
+            onerror="this.onerror=null;this.src='https://placehold.co/800x800/ffffff/0A2540?text=Image+Error';"
+        >
+
+        <!-- Text Content -->
+        <div class="relative z-10 h-full flex flex-col items-center md:items-end justify-center text-white text-center md:text-right p-8 md:pr-16">
+            <div class="text-content">
+                <h1 class="text-5xl md:text-7xl font-black tracking-tighter ">
+                    The Neptunians
+                </h1>
+                <p class="text-lg md:text-xl mt-2 text-blue-200 max-w-md">
+                    The distant cousins of our friendly neighborhood blue giant.
+                </p>
+                <a href="https://science.nasa.gov/exoplanets/neptune-like/"
+                class="cta-button inline-block bg-white text-[#0A2540] font-bold py-3 px-8 rounded-lg mt-6 text-lg hover:bg-gray-200 transition-colors duration-300 shadow-lg"
+                target="_blank">
+                    Check More at NASA
+                </a>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        // This simple script adds the 'loaded' class to the body
+        // once the page content has fully loaded, which triggers the CSS animations.
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+
+</body>
+</html>
