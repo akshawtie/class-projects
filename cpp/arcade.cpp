@@ -11,6 +11,7 @@ private:
     string pass = "helsinki@1";
 public:
     static bool flag;
+    int fn=0;
     void currentplayer(arc s1);
     string userpassword;
     int gno; //future use
@@ -20,28 +21,31 @@ public:
 
     //constructors 
     arc() {   
-        gamelst[0] = "number guesser";  //function name num_gss
+        gamelst[0] = "Number guesser";  //function name num_gss
         gamelst[1] = "Black Jack";      //functon name blackjck
         username="PlayerOne";
         userbalance=100;
     }
     arc(string s1,double s2)
     {
-         gamelst[0] = "number guesser";  //function name num_gss
+         gamelst[0] = "Number guesser";  //function name num_gss
         gamelst[1] = "Black Jack";      //functon name blackjck
         username=s1;
         userbalance=s2;
     }
 
     void gamelist();
+    void functrepeat();
+    void operator-();
     friend bool chck(arc s1);
     int game_selecter(int n);
+    
     //static bool valid(arc s1);
 
 
-    static void menu();
-    void menu(bool& flag);
-    void menu(const bool& flag);
+    static void tapl();
+    void tapl2();
+    void tapl3();
     void useraccount();
      static bool takeinput();
 
@@ -54,7 +58,19 @@ public:
     void blackjck();
     
 };
- void arc::menu(){
+void arc:: functrepeat()
+{
+ if(fn==1)
+ {
+    num_gss();
+ }
+ if(fn==2)
+ {
+    tapl3();
+}
+}
+ void arc::tapl()
+ {
     system("cls");
     cout<<endl<<"       Welcome To Akshat's Arcade"<<endl;
     cout<<"______________________________________________________"<<endl;
@@ -63,22 +79,49 @@ public:
     arc::flag=takeinput();
  }
 
-void arc::menu(const bool& flag) {
+void arc::tapl2() {
     cout << "Available Games:\n";
     int n = 0;
     for (int i = 0; i < 2; i++) {
         cout << i + 1 << ". " << gamelst[i] << endl;
     }
-    cout << "enter game number to play" << endl;
+    cout << "Enter game number to play" << endl;
     cin.clear();
     cin >> n;
     if (n > 2 || n < 1)
-        cout << "enter valid input";
+        cout << "Enter valid input";
     if (n < 3 && n > 0)
         game_selecter(n);
 }
-void arc::menu(bool& flag){
-    cout<<endl<<"third menu was called"<<endl<<"thanks for playing";
+void arc::tapl3(){
+    fn=2;
+    cout<<endl<<"Thanks for Playing"<<endl<<"Avaialble Balance:"<<userbalance<<endl<<endl;
+    cout<<endl<<"Do you want to Play again y/n"<<endl;
+    char c;
+    cin>>c;
+    if(c!='y'&&c!='Y')
+    {
+        functrepeat();
+    }
+    if(c=='y'||c=='Y'){
+    if(userbalance<50)
+    {
+       -(*this); 
+       num_gss();
+    }
+}
+    if(c=='n'||c=='N'){
+        return;
+    }
+}
+void arc::operator-()
+{
+    int w;
+    cout<<"enter the amount to add to wallet ";
+    cin>>w;
+    userbalance+=w;
+    cout<<endl<<"available balance"<<userbalance<<endl;
+
 }
 bool arc::takeinput(){char inp;
      cout<< "do you want to enter your name "<<endl;
@@ -160,6 +203,7 @@ void arc::blackjck() {
 
 void arc::num_gss() {
     //....code for number guesser....
+    fn=1;
     cout << "we are playing number guesser" << endl;
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -172,13 +216,18 @@ void arc::num_gss() {
     cout << endl << "please enter your guess number between 1 to 10" << endl;
     cin >> inpnumber;
     if (inpnumber > 10 || inpnumber < 1)
-        cout << "invalid input" << endl << "your money is returned";
+        functrepeat();
     else {
-        if (inpnumber == secretnum)
+        if (inpnumber == secretnum){
+
+        
             cout << "congrats u won: " << bet_amt*4;
-        else
+            userbalance=userbalance+(bet_amt*4);
+        }
+        else{
             cout << "sorry u lost" << endl << "the lottery number was " << secretnum;
-    }
+            userbalance=userbalance-bet_amt;
+    }}
 }
 int arc::game_selecter(int n) {
     if (n == 1)
@@ -194,7 +243,7 @@ int main() {
     bool x=true;
     string a1;
     double a2;
-    arc::menu();
+    arc::tapl();
     cout<<arc::flag;
     if(arc::flag==true)
     {
@@ -204,16 +253,16 @@ int main() {
         cin >> a2;
         arc s1(a1,a2);
         s1.currentplayer(s1);
-        s1.menu(true);
-    s1.menu(x);
+        s1.tapl2();
+    s1.tapl3();
     return 0;
     }
     else
     {
         arc s1;
         s1.currentplayer(s1);
-        s1.menu(true);
-    s1.menu(x);
+        s1.tapl2();
+        s1.tapl3();
     return 0;
     }
 }
