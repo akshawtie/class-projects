@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Inheritance Example</title>
+  <style>
+    /* Global (root) styles */
+    body {
+      font-family: "Segoe UI", sans-serif;
+      color: darkblue;             /* color will be inherited by children */
+      line-height: 1.5;            /* line-height is inherited */
+      background-color: #f2f2f2;
+    }
+
+    .parent {
+      border: 2px solid darkblue;
+      padding: 20px;
+      margin: 20px;
+      font-size: 20px;             /* children inherit this font-size */
+    }
+
+    .child {
+      margin-top: 10px;
+      /* border is NOT inherited by default */
+      border: 2px dashed lightgray;
+    }
+
+    .forced-inherit {
+      border: inherit;             /* explicitly inherit the parent's border */
+      color: inherit;              /* explicitly inherit the parent's color */
+    }
+
+    .reset {
+      color: initial;              /* resets to browser default (usually black) */
+      font-size: initial;          /* resets to browser default size */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Inheritance Demo</h1>
+
+  <div class="parent">
+    I am the parent element.
+    <p class="child">I am the child — I inherit <strong>font-size</strong> and <strong>color</strong> from the parent.</p>
+
+    <p class="child forced-inherit">I force-inherit the <strong>border</strong> and <strong>color</strong> too!</p>
+
+    <p class="child reset">I reset my <strong>color</strong> and <strong>font-size</strong> to default (not inherited).</p>
+  </div>
+
+</body>
+</html>

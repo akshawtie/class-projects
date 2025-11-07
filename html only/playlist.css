@@ -14,16 +14,27 @@ hr{
   height:0.01em;
   color: hsla(257, 100%, 3%, 0);
   border-color: #fcddfe4f;
+  width:100%;
 }
 
-.leftheadtext{
+.leftheadcontainer{
   display:inline-block;
+  width:90%;
   font-family: 'Pixelify Sans', sans-serif;
-  font-size:2em;
+  font-size:2rem;
   margin-left:1%;
+  text-align: center;
+  align-items: center;
   color:#f7dafc; 
-  padding:none;
-  margin-bottom:10px;
+  align-content: center;
+  padding-right:1em;
+  margin:2px;
+  padding-top:none;
+  padding-bottom:none;
+  margin-top:0.4rem;
+  padding-left:10px;
+  border-radius: 10px;
+
   
 }
 .nav-left a{
@@ -187,10 +198,8 @@ body{
 }
 
 .leftheadcontainer {
-  padding: 1rem;
   position: sticky;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.04);
   z-index: 1;
 }
 
