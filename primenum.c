@@ -4,21 +4,25 @@ int main()
 {
 int num;
 int num2;
-int count=1;
-printf("please enter a range \n");
 
+printf("please enter a range from \n");
+printf("please enter start \n");
 scanf("%d",&num);
-for(int j=0;j<num2;j++)
-for(int i=1;i<=sqrt(num);i++)
+printf("please enter end of range\n");
+scanf("%d",&num2);
+for(int j=num;j<num2;j++)
 {
-    if(num%i==0)
+    int count=1;
+for(int i=1;i<=sqrt(j);i++)
+{
+    if(j%i==0)
     {
         count++;
     }
 }
 if(count==2){
-    printf("prime number");
+    printf("%d \n",j);
 
 }
-else
-printf("not a prime");}
+}
+}
