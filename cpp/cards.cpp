@@ -1,7 +1,16 @@
 #include <iostream>
 #include <random>
 #include <string>
+/*
+Documentation-
+Class crd:-is used to generate cards,it uses an array with integer values with initial 
+value as 0, 0 denotes the card is not picked. 1 denotes the card is picked. the value of card is denoted
+by its position in array.
 
+
+
+
+*/
 class crd
 {
   public:
@@ -65,6 +74,7 @@ int crd::card[53];
 class prs: public virtual crd { 
   public:
    void playerstat(int pno);
+
    void player1(int pno);
 
    bool operator>(const prs &other) {
@@ -73,6 +83,7 @@ class prs: public virtual crd {
    bool operator<(const prs &other) {
        return this->user_total<other.user_total;
    }
+   
    bool operator==(const prs &other) {
        return this->user_total==other.user_total;
    }
@@ -101,7 +112,7 @@ void prs::player1(int pno){
     if(i>1)
     {
       char c;
-      std::cout<<"Hit Or Stand (h/s)"<<std::endl;
+      std::cout<<"Hit Or Stand (h/s)"<<std::endl<<"Any Other Input Leads to Stand"<<std::endl;
       std::cin>>c;
       if(c=='s'||c=='S')
       {
