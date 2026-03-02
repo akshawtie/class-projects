@@ -189,7 +189,6 @@
         <a href="queen.html"><img src="r/r4p1.jpg" class="poster3"></a>
         <a href="radiohead.html"><img src="r/r4c.jpg" class="poster2"></a>
     </div>
-
     <a class="headtext"><img src="r/rockfav.jpg" class="fav"> Oh no i dropped my feminist literature....</a>
 
     <div class="posters">
@@ -240,3 +239,63 @@
 </script>
 */-->
 </body>
+
+<canvas id="star-canvas"></canvas>
+
+<script>
+// Twinkling Stars Animation
+const canvas = document.getElementById('star-canvas');
+const ctx = canvas.getContext('2d');
+let stars = [];
+const STAR_COUNT = 120;
+const STAR_MIN_RADIUS = 0.5;
+const STAR_MAX_RADIUS = 1.8;
+const STAR_TWINKLE_SPEED = 0.01; // slower twinkle
+const GOLDEN_COLOR = '#FFD700';
+const WHITE_COLOR = 'white';
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+function createStars() {
+  stars = [];
+  for (let i = 0; i < STAR_COUNT; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: STAR_MIN_RADIUS + Math.random() * (STAR_MAX_RADIUS - STAR_MIN_RADIUS),
+      alpha: Math.random(),
+      twinkle: STAR_TWINKLE_SPEED * (Math.random() > 0.5 ? 1 : -1),
+      color: WHITE_COLOR // all stars white
+    });
+  }
+}
+createStars();
+
+function drawStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let star of stars) {
+    ctx.save();
+    ctx.globalAlpha = star.alpha;
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.r, 0, 2 * Math.PI);
+    ctx.fillStyle = star.color;
+    ctx.shadowColor = star.color;
+    ctx.shadowBlur = 8;
+    ctx.fill();
+    ctx.restore();
+    star.alpha += star.twinkle;
+    if (star.alpha <= 0.2 || star.alpha >= 1) star.twinkle *= -1;
+  }
+}
+
+function animate() {
+  drawStars();
+  requestAnimationFrame(animate);
+}
+animate();
+</script>

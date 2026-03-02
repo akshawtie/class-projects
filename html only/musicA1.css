@@ -1,3 +1,35 @@
+/* Animated Background */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  background: linear-gradient(-90deg,#080517, #100006, #081203);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+/* Star Canvas Styling */
+#star-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -132,9 +164,17 @@ body{
   overflow: hidden;
   height: 100vh;
 }
-.main_logo
-{
-  font-size: 300px;
+body{
+  background-color: #080517;
+  overflow: hidden;
+  height: 100vh;
+}
+@media (max-width: 767px) {
+  body {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+  }
 }
 .radioh 
 {
@@ -305,5 +345,405 @@ body{
   display: none;
   width: 12px;
   height: auto;
+}
+
+/* RESPONSIVE DESIGN - MOBILE FIRST APPROACH */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .mainpageview {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .mainleft {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+
+  .mainright {
+    width: 100%;
+    height: auto;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    margin-left: 15px;
+    gap: 10px;
+  }
+
+  .search-label {
+    width: 100%;
+    max-width: 500px;
+    height: 2.5em;
+  }
+
+  .search-label input {
+    font-size: 1.5em;
+    margin-left: 5%;
+  }
+
+  .nav-right {
+    gap: 10px;
+    margin-right: 15px;
+  }
+
+  .nav-right a {
+    font-size: 1.2em;
+    margin-right: 10px;
+  }
+
+  .posters {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .poster3, .posterL {
+    height: 12em;
+    width: 8em;
+    flex-shrink: 0;
+  }
+
+  .poster2 {
+    height: 10em;
+    width: 10em;
+  }
+
+  .headtext {
+    font-size: 1.5rem;
+  }
+
+  .leftheadtext {
+    font-size: 1.5em;
+  }
+}
+
+/* Mobile Devices (up to 767px) */
+@media (max-width: 767px) {
+  body {
+    overflow-y: auto;
+    height: auto;
+  }
+
+  .navbar {
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .nav-left a {
+    font-size: 1.5em;
+  }
+
+  .nav-right {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    margin-right: 0;
+  }
+
+  .nav-right a {
+    font-size: 1em;
+    margin-right: 0;
+  }
+
+  .melody_img {
+    height: 1rem;
+  }
+
+  .melody2_img {
+    height: 1.5em;
+  }
+
+  .search-label {
+    width: 90%;
+    max-width: 100%;
+    height: 2em;
+    margin: 10px auto;
+  }
+
+  .search-label input {
+    font-size: 1em;
+    margin-left: 10%;
+  }
+
+  .slash-icon {
+    font-size: 0.8em;
+  }
+
+  .mainpageview {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .mainleft {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .mainright {
+    width: 100%;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow-y: auto;
+    padding-bottom: 20px;
+  }
+
+  .activity-scroll {
+    max-height: 200px;
+  }
+
+  .songcard {
+    width: 95%;
+    height: auto;
+    gap: 0.8rem;
+  }
+
+  .songimg {
+    height: 2em;
+    width: 2em;
+    flex-shrink: 0;
+  }
+
+  .maintext {
+    font-size: 0.9em;
+    margin-top: 0.5em;
+  }
+
+  .subtext {
+    font-size: 0.7em;
+  }
+
+  .headtext {
+    font-size: 1.2rem;
+    display: block;
+    margin: 15px 0 10px 0;
+  }
+
+  .fav {
+    width: 2em;
+    height: 2em;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  .posters {
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-left: 0;
+    padding: 0 10px;
+    gap: 0.3em;
+    margin-bottom: 1em;
+  }
+
+  .poster3 {
+    height: 10em;
+    width: 7em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+  }
+
+  .posterL {
+    height: 10em;
+    width: 7em;
+    margin-left: 0;
+    margin-right: 0.2em;
+  }
+
+  .poster2 {
+    height: 8em;
+    width: 8em;
+    margin-right: 0.2em;
+    margin-left: 0;
+    margin-top: 1em;
+  }
+
+  .leftheadtext {
+    font-size: 1.2em;
+    margin-left: 0;
+  }
+
+  .block1 {
+    font-size: 1em;
+    padding: 1em;
+    flex-direction: column;
+  }
+
+  .subleft {
+    width: 100%;
+  }
+
+  .subright {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  hr {
+    margin: 10px 0;
+  }
+
+  .bannertemp {
+    width: 95%;
+    height: 12em;
+    margin: 10px auto;
+  }
+
+  .profheading {
+    font-size: 3em;
+  }
+
+  .poster1 {
+    height: 10em;
+    width: 7em;
+    padding: 0.5em;
+  }
+}
+
+/* Small Phones (up to 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .nav-left a {
+    font-size: 1.2em;
+  }
+
+  .nav-right {
+    gap: 15px;
+  }
+
+  .nav-right a {
+    font-size: 0.9em;
+  }
+
+  .melody_img {
+    height: 0.8rem;
+  }
+
+  .melody2_img {
+    height: 1.2em;
+  }
+
+  .search-label {
+    width: 95%;
+    height: 1.8em;
+    margin: 8px auto;
+  }
+
+  .search-label input {
+    font-size: 0.9em;
+    margin-left: 8%;
+  }
+
+  .slash-icon {
+    display: none;
+  }
+
+  .mainleft {
+    margin-left: 5px;
+    margin-right: 5px;
+    max-height: 200px;
+  }
+
+  .mainright {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .songcard {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .songimg {
+    height: 1.8em;
+    width: 1.8em;
+  }
+
+  .maintext {
+    font-size: 0.8em;
+  }
+
+  .subtext {
+    font-size: 0.65em;
+  }
+
+  .headtext {
+    font-size: 1em;
+  }
+
+  .leftheadtext {
+    font-size: 1em;
+    margin-left: 5px;
+  }
+
+  .fav {
+    width: 1.8em;
+    height: 1.8em;
+  }
+
+  .posters {
+    padding: 0 5px;
+    gap: 0.2em;
+  }
+
+  .poster3 {
+    height: 8em;
+    width: 5.5em;
+  }
+
+  .posterL {
+    height: 8em;
+    width: 5.5em;
+  }
+
+  .poster2 {
+    height: 7em;
+    width: 7em;
+  }
+
+  .poster1 {
+    height: 8em;
+    width: 5.5em;
+    padding: 0.3em;
+  }
+
+  .bannertemp {
+    width: 95%;
+    height: 10em;
+    margin: 8px auto;
+  }
+
+  .profheading {
+    font-size: 2.5em;
+    left: 0.3em;
+  }
+
+  .block1 {
+    font-size: 0.9em;
+    padding: 0.8em;
+  }
+
+  .subleft {
+    font-size: 0.9em;
+  }
+
+  .subright {
+    font-size: 0.9em;
+  }
 }
 
