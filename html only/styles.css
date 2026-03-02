@@ -338,3 +338,342 @@ html, body {
     margin: 40px auto 80px auto;
     font-size: 1.75em;
 }
+
+/* RESPONSIVE DESIGN */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .band-name {
+        font-size: 2.5em;
+    }
+
+    .band-name-large {
+        font-size: 5em;
+    }
+
+    .section-header {
+        font-size: 2em;
+    }
+
+    .about-band-image {
+        height: 150px;
+        width: 150px;
+    }
+
+    .shop-items {
+        flex-wrap: wrap;
+    }
+
+    .shop-item {
+        margin: 15px;
+        flex: 0 1 calc(50% - 30px);
+    }
+
+    .shop-item-image {
+        height: 200px;
+    }
+
+    .tour-date {
+        width: 15%;
+    }
+
+    .tour-city {
+        width: 30%;
+    }
+
+    .tour-arena {
+        width: 35%;
+    }
+
+    .tour-btn {
+        max-width: 20%;
+    }
+
+    .cart-item {
+        width: 50%;
+    }
+
+    .cart-price {
+        width: 20%;
+    }
+
+    .cart-quantity {
+        width: 30%;
+    }
+
+    .btn-header {
+        margin: .5em 10%;
+        font-size: 1.2em;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 767px) {
+    .band-name {
+        font-size: 2em;
+    }
+
+    .band-name-large {
+        font-size: 3em;
+    }
+
+    .section-header {
+        font-size: 1.5em;
+    }
+
+    .about-band-image {
+        float: none;
+        height: 120px;
+        width: 120px;
+        display: block;
+        margin: 15px auto;
+    }
+
+    .main-nav li {
+        padding: 0 2%;
+        display: block;
+        width: 100%;
+    }
+
+    .nav li {
+        display: block;
+        width: 100%;
+    }
+
+    .shop-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .shop-item {
+        margin: 15px auto;
+        width: 90%;
+    }
+
+    .shop-item-image {
+        height: 150px;
+    }
+
+    .shop-item-title {
+        font-size: 1.2em;
+    }
+
+    .shop-item-details {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .tour-row {
+        padding-bottom: 0.8em;
+        margin-bottom: 0.8em;
+    }
+
+    .tour-item {
+        display: block;
+        padding-bottom: 0.5em;
+        width: 100%;
+    }
+
+    .tour-date {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .tour-city {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .tour-arena {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .tour-btn {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .cart-row {
+        flex-direction: column;
+    }
+
+    .cart-column {
+        border: none;
+        margin-right: 0;
+        padding-bottom: 8px;
+        margin-bottom: 10px;
+    }
+
+    .cart-item {
+        width: 100%;
+    }
+
+    .cart-price {
+        width: 100%;
+    }
+
+    .cart-quantity {
+        width: 100%;
+    }
+
+    .cart-item-image {
+        width: 60px;
+        height: auto;
+    }
+
+    .cart-header {
+        font-size: 1em;
+    }
+
+    .cart-item-title {
+        font-size: 1em;
+    }
+
+    .cart-quantity-input {
+        height: 30px;
+        width: 40px;
+        margin-right: 10px;
+    }
+
+    .btn-header {
+        margin: .5em 5%;
+        font-size: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .btn-purchase {
+        margin: 20px auto 50px auto;
+        font-size: 1.2em;
+    }
+
+    .cart-total-title {
+        font-size: 1.2em;
+        margin-right: 10px;
+    }
+
+    .cart-total-price {
+        font-size: 0.9em;
+    }
+
+    .container {
+        padding: 0 1em;
+    }
+
+    .main-footer-container ul {
+        flex-wrap: wrap;
+    }
+
+    .footer-nav li {
+        padding: 0 .25em;
+    }
+
+    .footer-nav img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+    .band-name {
+        font-size: 1.5em;
+    }
+
+    .band-name-large {
+        font-size: 2.2em;
+    }
+
+    .section-header {
+        font-size: 1.2em;
+    }
+
+    .about-band-image {
+        height: 100px;
+        width: 100px;
+    }
+
+    .content-section {
+        margin: 0.5em;
+    }
+
+    .main-nav li {
+        padding: 0;
+        font-size: 0.9em;
+    }
+
+    .shop-item {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    .shop-item-image {
+        height: 120px;
+    }
+
+    .shop-item-title {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+
+    .tour-item {
+        font-size: 0.9em;
+    }
+
+    .tour-row {
+        padding-bottom: 0.6em;
+        margin-bottom: 0.6em;
+    }
+
+    .cart-header {
+        font-size: 0.9em;
+    }
+
+    .cart-item-title {
+        font-size: 0.9em;
+    }
+
+    .cart-item-image {
+        width: 50px;
+    }
+
+    .cart-quantity-input {
+        height: 28px;
+        width: 35px;
+        font-size: 0.9em;
+    }
+
+    .btn-header {
+        margin: .3em 2%;
+        font-size: 0.9em;
+    }
+
+    .btn-purchase {
+        margin: 15px auto 30px auto;
+        font-size: 1em;
+    }
+
+    .cart-total {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .cart-total-title {
+        font-size: 1em;
+        margin-right: 0;
+    }
+
+    .cart-total-price {
+        font-size: 0.85em;
+    }
+
+    .main-footer {
+        padding: .15em 0;
+    }
+
+    .footer-nav li {
+        padding: 0 .15em;
+        font-size: 0.85em;
+    }
+}
